@@ -1,4 +1,5 @@
-﻿using EvotechGS.Models;
+﻿using EvotechGS.Domain.Entities;
+using EvotechGS.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EvotechGS.Infrastructure.Data.AppData
@@ -9,7 +10,7 @@ namespace EvotechGS.Infrastructure.Data.AppData
         {
 
         }
-        public DbSet<DispositivoModel> Dispositivo { get; set; }
-        public DbSet<UsuarioModel> Usuario { get; set; }
+        public DbSet<DispositivoEntity> Dispositivo { get; set; }
+        public DbSet<UsuarioEntity> Usuario { get; set; }
     }
 }

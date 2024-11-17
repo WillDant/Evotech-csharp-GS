@@ -3,7 +3,7 @@ using EvotechGS.Domain.Entities;
 
 namespace EvotechGS.Application.Interfaces
 {
-    public interface IUsuarioApplicationContext
+    public interface IUsuarioApplicationService
     {
         IEnumerable<UsuarioDto> ObterTodosUsuarios();
         UsuarioEntity? ObterUsuarioPorId(int id);
