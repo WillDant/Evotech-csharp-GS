@@ -2,7 +2,7 @@ using System.Diagnostics;
 using EvotechGS.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EvotechGS.Controllers
+namespace EvotechGS.Presentation.Controllers
 {
     public class HomeController : Controller
     {

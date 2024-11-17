@@ -1,4 +1,4 @@
-using EvotechGS.AppData;
+using EvotechGS.Infrastructure.Data.AppData;
 using Microsoft.EntityFrameworkCore;
 
 namespace EvotechGS
