@@ -1,4 +1,5 @@
-﻿using EvotechGS.Application.Interfaces;
+﻿using EvotechGS.Application.Dtos;
+using EvotechGS.Application.Interfaces;
 using EvotechGS.Domain.Entities;
 using EvotechGS.Domain.Interfaces;
 
@@ -17,5 +18,37 @@ namespace EvotechGS.Application.Services
         {
             return _dispositivoRepository.DeletarDispositivo(id);
         }
+
+        public DispositivoEntity? ObterDispositivoPorId(int id)
+        {
+            return _dispositivoRepository.ObterDispositivoPorId(id);
+        }
+
+        public IEnumerable<DispositivoEntity> ObterTodosDispositivos()
+        {
+            return _dispositivoRepository.ObterTodosDispositivos() ?? Enumerable.Empty<DispositivoEntity>();
+        }
+
+        public DispositivoEntity? SalvarDispositivo(DispositivoDto entity)
+        {
+            var dispositivo = new DispositivoEntity
+            {
+                nm_dispositivo = entity.nm_dispositivo,
+                potencia = entity.potencia,
+            };
+            return _dispositivoRepository.SalvarDispositivo(dispositivo);
+        }
+
+        public DispositivoEntity? AtualizarDispositivo(int id, DispositivoDto entity)
+        {
+            var dispositivo = new DispositivoEntity
+            {
+                id_dispositivo = id,
+                nm_dispositivo = entity.nm_dispositivo,
+                potencia = entity.potencia,
+            };
+            return _dispositivoRepository.AtualizarDispositivo(dispositivo);
+        }
+
     }
 }
