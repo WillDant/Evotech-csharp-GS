@@ -1,31 +1,32 @@
 ﻿using EvotechGS.Domain.Entities;
 using EvotechGS.Domain.Interfaces;
+using EvotechGS.Infrastructure.Data.AppData;
 
 namespace EvotechGS.Infrastructure.Data.Repositories
 {
     public class DispositivoRepository : IDispositivoRepository
     {
-        private readonly Contexto _contexto;
-        public DispositivoRepository(Contexto contexto)
+        private readonly ApplicationContext _contexto;
+        public DispositivoRepository(ApplicationContext contexto)
         {
             _contexto = contexto;
         }
         // Listar todos os dispositivos
         public List<DispositivoEntity> ListarDispositivos()
         {
-            return _contexto.Dispositivos.ToList();
+            return _contexto.Dispositivo.ToList();
         }
         // Listar um dispositivo
         public DispositivoEntity? ObterDispositivoPorId(int id)
         {
-            var dispositivo = _contexto.Dispositivos.FirstOrDefault(x => x.Id == id);
+            var dispositivo = _contexto.Dispositivo.FirstOrDefault(x => x.id_dispositivo == id);
             return dispositivo;
         }
 
         // Salvar um dispositivo
         public DispositivoEntity? SalvarDispositivo(DispositivoEntity model)
         {
-            _contexto.Dispositivos.Add(model);
+            _contexto.Dispositivo.Add(model);
             _contexto.SaveChanges();
             return model;
         }
@@ -34,8 +35,8 @@ namespace EvotechGS.Infrastructure.Data.Repositories
         public DispositivoEntity? AtualizarDispositivo(int id, DispositivoEntity model)
         {
             var dispositivo = _contexto
-            .Dispositivos
-            .FirstOrDefault(x => x.Id == id);
+            .Dispositivo
+            .FirstOrDefault(x => x.id_dispositivo == id);
 
             if (dispositivo is not null)
             {
@@ -50,11 +51,11 @@ namespace EvotechGS.Infrastructure.Data.Repositories
         public DispositivoEntity? DeletarDispositivo(int id)
         {
             var dispositivo = _contexto
-            .Dispositivos
-            .FirstOrDefault(x => x.Id == id);
+            .Dispositivo
+            .FirstOrDefault(x => x.id_dispositivo == id);
             if (dispositivo is not null)
             {
-                _contexto.Dispositivos.Remove(dispositivo);
+                _contexto.Dispositivo.Remove(dispositivo);
                 _contexto.SaveChanges();
                 return dispositivo;
             }
