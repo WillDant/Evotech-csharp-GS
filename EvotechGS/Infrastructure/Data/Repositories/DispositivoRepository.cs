@@ -12,7 +12,7 @@ namespace EvotechGS.Infrastructure.Data.Repositories
             _contexto = contexto;
         }
         // Listar todos os dispositivos
-        public List<DispositivoEntity> ListarDispositivos()
+        public IEnumerable<DispositivoEntity> ObterTodosDispositivos()
         {
             return _contexto.Dispositivo.ToList();
         }

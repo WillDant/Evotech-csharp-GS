@@ -33,7 +33,7 @@ namespace EvotechGS.Application.Services
                 senha = entity.senha,
                 telefone = entity.telefone
             };
-            return _usuarioRepository.AtualizarUsuario(usuario);
+            return _usuarioRepository.AtualizarUsuario(id, usuario);
         }
 
         //Obter Usuario por Id
@@ -45,7 +45,7 @@ namespace EvotechGS.Application.Services
         //Obter todos os Usuarios
         public IEnumerable<UsuarioEntity> ObterTodosUsuarios()
         {
-            return _usuarioRepository.ObterTodosUsuarios() ?? Enumerable.Empty<UsuarioEntity>();
+            return _usuarioRepository.ObterTodosUsuarios();
         }
 
         // Salvar Usuario

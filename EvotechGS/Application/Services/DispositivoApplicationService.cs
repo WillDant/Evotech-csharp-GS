@@ -47,7 +47,7 @@ namespace EvotechGS.Application.Services
                 nm_dispositivo = entity.nm_dispositivo,
                 potencia = entity.potencia,
             };
-            return _dispositivoRepository.AtualizarDispositivo(dispositivo);
+            return _dispositivoRepository.AtualizarDispositivo(id, dispositivo);
         }
 
     }

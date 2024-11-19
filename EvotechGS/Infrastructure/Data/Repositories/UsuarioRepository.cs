@@ -14,7 +14,7 @@ namespace EvotechGS.Infrastructure.Data.Repositories
         }
 
         // Listar todos os usuários
-        public List<UsuarioEntity> ListarUsuarios()
+        public IEnumerable<UsuarioEntity> ObterTodosUsuarios()
         {
             return _context.Usuario.ToList();
         }
