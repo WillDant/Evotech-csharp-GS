@@ -8,7 +8,7 @@ namespace EvotechGS.Domain.Interfaces
         IEnumerable<UsuarioEntity> ObterTodosUsuarios();
         UsuarioEntity? ObterUsuarioPorId(int id);
         UsuarioEntity? SalvarUsuario(UsuarioEntity entity);
-        UsuarioEntity? AtualizarUsuario(UsuarioEntity entity);
+        UsuarioEntity? AtualizarUsuario(int id, UsuarioEntity entity);
         UsuarioEntity? DeletarUsuario(int id);
     }
 }

@@ -7,7 +7,7 @@ namespace EvotechGS.Domain.Interfaces
         IEnumerable<DispositivoEntity> ObterTodosDispositivos();
         DispositivoEntity? ObterDispositivoPorId(int id);
         DispositivoEntity? SalvarDispositivo(DispositivoEntity entity);
-        DispositivoEntity? AtualizarDispositivo(DispositivoEntity entity);
+        DispositivoEntity? AtualizarDispositivo(int id, DispositivoEntity entity);
         DispositivoEntity? DeletarDispositivo(int id);
     }
 }
